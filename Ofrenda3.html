@@ -1,0 +1,137 @@
+<html>
+<head>
+    <style>
+    html{
+    font-family:"Helvetica";
+    background: #f3f3f3;
+    font-size:12px;
+    }
+    
+    body {
+    padding: 5em 2em;
+    text-align: center;
+    } 
+    
+    button{
+    font-size:1.8em;
+    display:inline-block; 
+    position: relative;
+    background: black;
+    border:none;
+    width: 300px; 
+    height: 300px ;
+    color :yellow;
+    text-transform:uppercase; 
+    font-weight:bold;
+    
+    }
+    
+    button:after{
+    content: attr(data-normal); 
+    }
+    
+    button:hover{
+    background:yellow;
+    color:black;}
+    
+    button:hover::after{
+    content: url(a.png);
+    }
+
+#h-ma-1, #h-ma-2, #h-ma-3 {
+    display: none;}
+    
+    #rojo {
+     font-size:1.8em;
+    display:inline-block; 
+    position: relative;
+    background: red;
+    border:none;
+    width: 100px; 
+    height: 100px ;
+    color :black;
+    text-transform:uppercase; 
+    font-weight:bold;
+    
+    
+    }
+    
+    
+    
+    
+    
+    </style> 
+
+</head>
+
+<script>
+function tocar(){
+    document.getElementById("uh").play()
+}
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+    }
+function aparece (){
+
+    var secret =  ["h-ma-1","h-ma-2","h-ma-3" ];
+      document.getElementById(secret [getRndInteger(0, 2)]).style.display="block"; 
+    
+    
+    
+
+}
+
+
+
+</script>
+
+
+    <body>
+    
+        <div>
+            <button type="button" id="rojo" onmouseover="aparece ()">
+                El boton 
+            </button>
+        </div>
+    
+    
+        <div id="h-ma-1" class= "main-cont">
+            <div class="secret-cont">
+                <p> vinicius </p>
+            </div>
+            <audio Id="uh" >
+                <source src="uhh.webm" type="audio/webm">
+            </audio>
+            <button type="button" data-hover= "como estas?" data-normal="hola" onclick="alert('Bien')" onmouseover="tocar()"   >
+            
+            </button>
+        </div>
+        
+        <div id="h-ma-2" class= "main-cont">
+            <div class="secret-cont">
+                <p> vinicius </p>
+            </div>
+            <audio Id="uh-1" >
+                <source src="uhh.webm" type="audio/webm">
+            </audio>
+            <button type="button" data-hover= "como estas?" data-normal="hola1" onclick="alert('Bien')" onmouseover="tocar()"   >
+            
+            </button>
+        </div>
+        
+        <div id="h-ma-3" class= "main-cont">
+            <div class="secret-cont">
+                <p> vinicius </p>
+            </div>
+            <audio Id="uh-2" >
+                <source src="uhh.webm" type="audio/webm">
+            </audio>
+            <button type="button" data-hover= "como estas?" data-normal="hola2" onclick="alert('Bien')" onmouseover="tocar()"   >
+            
+            </button>
+        </div>
+        
+        
+    </body>
+</html>
